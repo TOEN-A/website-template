@@ -5,11 +5,11 @@
 @layer base {
   html,
   body {
-    @apply p-0 m-0 font-poppins text-sm bg-main-bg-color text-icons-color;
+    @apply  px-4 m-0 font-poppins text-sm bg-main-bg-color text-icons-color;
   }
 
   h1 {
-    @apply xl:text-3xl lg:text-xl md:text-lg text-base font-bold;
+    @apply xl:text-3xl lg:text-xl md:text-lg text-2xl font-bold;
   }
 
   h2 {
