@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import plugin from "tailwindcss/plugin";
 
 const config: Config = {
   content: [
@@ -8,13 +9,28 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      colors: {
+        "icons-color": "#4c5773",
+        "icons-light-color": "#4c577341",
+        "icons-bg-color": "#e2e6e9",
+        "shadow-dark-color": "#d3dae7",
+        "bg-shadow-dark-color": "#d3dae745",
+        "shadow-light-color": "#fff",
+        "main-bg-color": "#ecf0f3",
+      },
+      fontFamily: {
+        poppins: ["Poppins", "sans-serif"],
       },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ addUtilities }) {
+      addUtilities({
+        ".no-tap-highlighting": {
+          "-webkit-tap-highlight-color": "rgba(0,0,0,0)",
+        },
+      });
+    }),
+  ],
 };
 export default config;

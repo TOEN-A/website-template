@@ -2,32 +2,74 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+@layer base {
+  html,
+  body {
+    @apply p-0 m-0 font-poppins text-sm bg-main-bg-color text-icons-color;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+  h1 {
+    @apply xl:text-3xl lg:text-xl md:text-lg text-base font-bold;
+  }
+
+  h2 {
+    @apply xl:text-2xl lg:text-lg md:text-base text-sm;
+  }
+
+  h3 {
+    @apply text-xl;
+  }
+
+  input {
+    @apply text-icons-color;
+  }
+
+  textarea {
+    @apply text-icons-color;
+  }
+
+  textarea::placeholder {
+    @apply text-icons-color;
+  }
+
+  a {
+    @apply text-inherit;
+  }
+
+  * {
+    @apply box-border no-tap-highlighting;
+  }
+
+  ::selection {
+    @apply text-shadow-dark-color bg-icons-color;
+  }
+
+  ::-webkit-scrollbar {
+    @apply w-4 border border-main-bg-color;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply border-r-0 bg-main-bg-color;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply border-r-[2rem] bg-icons-color w-2;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+@layer components {
+  .underline-animation {
+    @apply relative overflow-hidden;
+  }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .underline-animation::after {
+    content: "";
+    @apply absolute w-0 h-0.5 bottom-0 left-1/2 bg-icons-color transition-all duration-300 ease-in-out;
+    transform: translateX(-50%);
+  }
+
+  .underline-animation:hover::after {
+    @apply w-5/6 left-1/2;
+    transform: translateX(-50%);
   }
 }
