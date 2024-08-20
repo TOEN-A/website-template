@@ -5,15 +5,15 @@
 @layer base {
   html,
   body {
-    @apply  px-4 m-0 font-notojp text-sm bg-main-bg-color text-icons-color;
+    @apply m-0 font-notojp text-sm bg-main-bg-color text-icons-color;
   }
 
   h1 {
-    @apply xl:text-3xl lg:text-xl md:text-lg text-2xl font-bold;
+    @apply xl:text-3xl lg:text-2xl md:text-xl text-2xl font-bold;
   }
 
   h2 {
-    @apply xl:text-2xl lg:text-lg md:text-base text-sm;
+    @apply xl:text-xl lg:text-lg md:text-base text-sm;
   }
 
   h3 {
@@ -71,5 +71,18 @@
   .underline-animation:hover::after {
     @apply w-5/6 left-1/2;
     transform: translateX(-50%);
+  }
+
+  @keyframes slideImage {
+    from {
+      transform: scale(1.2) translateX(0);
+    }
+    to {
+      transform: scale(1.2) translateX(100%);
+    }
+  }
+  
+  .slide-in {
+    animation: slideImage 300s linear infinite;
   }
 }

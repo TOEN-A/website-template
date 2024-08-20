@@ -13,6 +13,7 @@ const config: Config = {
         "icons-color": "#4c5773",
         "icons-light-color": "#4c577341",
         "icons-bg-color": "#e2e6e9",
+        "icons-bg-color-transparent": "#e2e6e9d6",
         "shadow-dark-color": "#d3dae7",
         "bg-shadow-dark-color": "#d3dae745",
         "shadow-light-color": "#fff",
