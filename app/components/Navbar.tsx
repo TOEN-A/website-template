@@ -57,17 +57,17 @@ const Navbar = () => {
   return (
     <>
       <div
-        className={`flex items-center justify-between fixed p-4 z-50 transition-all duration-800 ${
+        className={`duration-800 fixed z-50 flex items-center justify-between p-4 transition-all ${
           isScrolled
-            ? "top-0 left-0 right-0 bg-icons-bg-color"
-            : "top-4 left-4 right-4 bg-icons-bg-color-transparent rounded-full"
+            ? "left-0 right-0 top-0 bg-icons-bg-color"
+            : "left-4 right-4 top-4 rounded-full bg-icons-bg-color-transparent"
         }`}
       >
         <div className="flex items-center">
           <Image
             src="/sample.png"
             alt="Sample Logo"
-            className="ml-2 mr-4 hidden lg:block cursor-pointer"
+            className="ml-2 mr-4 hidden cursor-pointer lg:block"
             width={100}
             height={100}
             priority
@@ -76,7 +76,7 @@ const Navbar = () => {
           <Image
             src="/sample.png"
             alt="Sample Logo"
-            className="ml-2 mr-4 lg:hidden cursor-pointer"
+            className="ml-2 mr-4 cursor-pointer lg:hidden"
             width={70}
             height={70}
             priority
@@ -84,14 +84,14 @@ const Navbar = () => {
           />
           {/* <h1>タイトルをあれば使う</h1> */}
         </div>
-        <h2 className="lg:hidden relative" ref={menuRef}>
+        <h2 className="relative lg:hidden" ref={menuRef}>
           <HamburgerButton isOpen={isMenuOpen} onClick={toggleMenu} />
           <Fade in={isMenuOpen}>
-            <div className="absolute top-full right-0 w-32 bg-icons-bg-color shadow-2xl lg:hidden flex flex-col items-center mt-4 rounded-md">
+            <div className="absolute right-0 top-full mt-4 flex w-32 flex-col items-center rounded-md bg-icons-bg-color shadow-2xl lg:hidden">
               {menuItems.map((menuItem) => (
                 <p
                   key={menuItem.name}
-                  className="py-2 border-b border-icons-light-color w-full text-center cursor-pointer underline-animation"
+                  className="underline-animation w-full cursor-pointer border-b border-icons-light-color py-2 text-center"
                   onClick={() => {
                     router.push(menuItem.path);
                     setIsMenuOpen(false);
@@ -103,14 +103,14 @@ const Navbar = () => {
             </div>
           </Fade>
         </h2>
-        <h2 className="hidden lg:flex ml-10">
+        <h2 className="ml-10 hidden lg:flex">
           {menuItems.map((menuItem, index) => (
             <p
               key={menuItem.name}
               className={
                 index === menuItems.length - 1
-                  ? "px-4 border-icons-light-color cursor-pointer underline-animation"
-                  : "px-4 border-r-4 border-icons-light-color cursor-pointer underline-animation"
+                  ? "underline-animation cursor-pointer border-icons-light-color px-4"
+                  : "underline-animation cursor-pointer border-r-4 border-icons-light-color px-4"
               }
               onClick={() => router.push(menuItem.path)}
             >
