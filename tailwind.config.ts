@@ -19,7 +19,7 @@ const config: Config = {
         "main-bg-color": "#ecf0f3",
       },
       fontFamily: {
-        poppins: ["Poppins", "sans-serif"],
+        notojp: ["var(--font-notojp)"],
       },
     },
   },

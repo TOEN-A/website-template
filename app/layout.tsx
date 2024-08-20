@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import theme from "@/theme";
 import { ThemeProvider } from "@mui/material/styles";
+import { notojp } from "./utiles/font";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja">
+    <html lang="ja" className={`${notojp.variable}`}>
       <body>
         <AppRouterCacheProvider options={{ key: "css" }}>
           <ThemeProvider theme={theme}>

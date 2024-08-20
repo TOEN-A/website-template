@@ -5,7 +5,7 @@
 @layer base {
   html,
   body {
-    @apply  px-4 m-0 font-poppins text-sm bg-main-bg-color text-icons-color;
+    @apply  px-4 m-0 font-notojp text-sm bg-main-bg-color text-icons-color;
   }
 
   h1 {
