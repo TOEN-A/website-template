@@ -28,7 +28,7 @@ const ImageSlider: React.FC<{
   }, [images.length]);
 
   return (
-    <div className="h-[70vh] overflow-hidden lg:h-screen">
+    <div className="overflow-hidden h-screen">
       <Fade in={fadeIn} timeout={1000}>
         <div key={animationKey} className="slide-image h-full w-full">
           <Image
