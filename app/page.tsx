@@ -1,10 +1,29 @@
 import Image from "next/image";
 import ImageSlider from "./components/ImageSlider";
 import Collapse from "@mui/material/Collapse";
+import Card from "./components/Card";
 
 const images = [
   { src: "/cafe.png", alt: "Cafe" },
   { src: "/water.png", alt: "Water" },
+];
+
+const cards = [
+  { title: "Webページ製作", description: "Webページの制作を行います。", src: "web-create.png", alt: "Web Create" },
+  {
+    title: "システム開発",
+    description:
+      "システムの開発を行います。システムの開発を行います。システムの開発を行います。システムの開発を行います。システムの開発を行います。",
+    src: "system.png",
+    alt: "System",
+  },
+  { title: "DX推進", description: "DXの推進を行います。", src: "dx.png", alt: "DX" },
+  {
+    title: "定期メンテナンス",
+    description: "定期メンテナンス業務を行います。",
+    src: "maintenance.png",
+    alt: "Maintenance",
+  },
 ];
 
 export default function Home() {
@@ -24,7 +43,7 @@ export default function Home() {
       <h1 className="p-10">about</h1>
       <div className="border-b-2 bg-icons-color"></div>
       <div className="flex items-center">
-        <div className="lg:p-48 lg:pr-24 p-10">
+        <div className="p-10 lg:p-48 lg:pr-24">
           <h2>
             DXツール作成部署で、フルスタックエンジニアとして携わってきた経験から幅広い要望に応えることができます。
           </h2>
@@ -35,11 +54,10 @@ export default function Home() {
       </div>
       <h1 className="p-10">solution</h1>
       <div className="border-b-2 bg-icons-color"></div>
-      <div>
-        <h1>Webページ製作</h1>
-        <h2>
-          デザインからコーディングまで、お客様の要望に合わせたWebページを制作します。主にNext.js、Reactを使用しての開発となります。
-        </h2>
+      <div className="grid grid-cols-12 gap-4 p-2 lg:p-10">
+        {cards.map((card) => (
+          <Card key={card.title} title={card.title} description={card.description} src={card.src} alt={card.alt} />
+        ))}
       </div>
     </>
   );

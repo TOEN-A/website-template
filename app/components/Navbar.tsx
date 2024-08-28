@@ -109,8 +109,8 @@ const Navbar = () => {
               key={menuItem.name}
               className={
                 index === menuItems.length - 1
-                  ? "underline-animation cursor-pointer border-icons-light-color px-4"
-                  : "underline-animation cursor-pointer border-r-4 border-icons-light-color px-4"
+                  ? "underline-animation cursor-pointer border-icons-light-color px-4 text-icons-color"
+                  : "underline-animation cursor-pointer border-r-4 border-icons-light-color px-4 text-icons-color"
               }
               onClick={() => router.push(menuItem.path)}
             >
