@@ -1,7 +1,7 @@
 import Image from "next/image";
 import ImageSlider from "./components/ImageSlider";
-import Collapse from "@mui/material/Collapse";
 import Card from "./components/Card";
+import LatestInfomation from "./components/LatestInfomation";
 
 const images = [
   { src: "/cafe.png", alt: "Cafe" },
@@ -59,6 +59,9 @@ export default function Home() {
           <Card key={card.title} title={card.title} description={card.description} src={card.src} alt={card.alt} />
         ))}
       </div>
+      <h1 className="p-10">latest infomation</h1>
+      <div className="border-b-2 bg-icons-color"></div>
+      <LatestInfomation />
     </>
   );
 }
